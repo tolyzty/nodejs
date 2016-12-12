@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="../public/stylesheets/style.css"><%include header.html%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1><%=blogone.blog_title%></h1>
+            <%-blogone.blog_content%>
+            <h2>浏览量：<%=blogone.blog_pv%></h2>
+            <h4>session id : <%=usid%></h4>
+        </div>
+        <div class="col-md-2">
+            <ul class="zuo f">
+                <button type="button" class="btn btn-default btn-z top20" id="author">关注作者 &nbsp;<span class="glyphicon glyphicon-plus-sign"></span></button>
+                <%if(usid==''){%>
+                <a  class="btn btn-default btn-z top20" href="/login"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;可以收藏</a>
+                <%}else{%>
+                <button type="button" class="btn btn-default btn-z top20 s" id="followbtn" ><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;<span id="follow">可以收藏</span></button>
+                <%}%>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        var blogid = '<%=blogone._id%>';
+        var usi = '<%=usid%>';
+        var datas = {lable_blogid:blogid,lable_userid:usi};
+        var url = '/follow/'+blogid+'';
+        var follow = $('#follow');
+        if (usi!=''&&usi!=null){
+            $.ajax({
+                url:'/follow',
+                type:'post',
+                data:datas,
+                success:function (data,status) {
+                    //alert(data);
+                    if(data==''){
+                        //alert('data是空可以点击');
+                        $('#followbtn').click(function () {
+                            clicfoll(usi,blogid);
+                        });
+                    }else{
+                        if(data.lable_info==false){
+                            //alert('false');
+                            $('#followbtn').click(function () {
+                                clicfoll(usi,blogid);
+                            });
+                        }else{
+                            $('.s').removeAttr('id');
+                            follow.text('已经收藏')
+                            $('.s span').eq(0).attr('class','glyphicon glyphicon-heart');
+                        }
+                    }
+
+
+                  /*  if(data==''){
+                        follow.text('可以收藏');
+                        $('#followbtn').click(function () {
+                            clicfoll(usi,blogid);
+                        });
+                    }else{
+                        if(data.lable_info==true){
+                            follow.text('已经收藏过了')
+                        }else{
+
+                        }
+                    }*/
+
+                    /*if (status == 'success'){
+                        if(data.lable_info==true){
+                            follow.text('已收藏文章');
+                        }
+                    }else{
+
+                    }*/
+                }
+            });
+        }else{
+
+        }
+
+
+
+
+
+    });
+
+    function clicfoll(userid,blogid) {
+         $.ajax({
+            url:'/clickfollow',
+            type:'post',
+            data:{
+                lable_userid:userid,
+                lable_blogid:blogid
+            },
+            success:function (data,status) {
+
+                if(status =='success'){
+                    location.href = location.href;
+                }
+
+
+            }
+         });
+    };
+
+</script>
+
+<%include footer.html%>

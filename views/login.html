@@ -1,0 +1,65 @@
+<%include header.html%>
+<div class="container">
+       <div class="alert-signin" >
+            <%-message%>
+           <div class="alert alert-danger" role="alert" style="display: none;" id="alert"></div>
+       </div>
+       <form class="form-signin" role="form" id="myform" method="post">
+           <h2 class="form-signin-heading">Please sign in</h2>
+           <input type="text" class="form-control" placeholder="Username" name="username" id="username" autocomplete="off" />
+           <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
+           <button class="btn btn-lg btn-primary btn-block" type="submit" id="signin">Sign in</button>
+           <hr>
+           <p style="float: right"><a href="/forger">forger password!</a> </p>
+       </form>
+   </div>
+<script>
+    $(function () {
+
+        var aler = $('#alert');
+        var ret = false;
+
+        $('#signin').click(function () {
+            var user = $('#username').val();
+            var pass = $('#password').val();
+            var data = {username:user,password:pass};
+            if(user==''||pass==''){
+                aler.show().text('对不起,请填写用户名和密码');
+                return false;
+            } else if(user.length>=20 || user.length<=4){
+                alert(user.length);
+                aler.show().text('对不起,用户名不能小于4或大于20');
+                return false;
+            }else{
+              /* login(data);*/
+            }
+
+        });
+
+
+        $('#username,#password').focus(function () {
+            aler.hide();
+        });
+
+    });
+
+    function login(data) {
+             $.ajax({
+                    url:'/login',
+                    type:'post',
+                    data:data,
+                    success:function (data,status) {
+                        if(status == 'success'){
+                            location.href = 'home';
+                        }
+                    },
+                    error:function (data,status) {
+                        if (status == 'error'){
+                            location.href = 'login';
+                        }
+                    }
+                });
+    }
+
+</script>
+<%include footer.html%>

@@ -1,0 +1,74 @@
+<%include header.html%>
+
+<div class="container">
+    <div class="alert-signin" >
+        <%-message%>
+        <div class="alert alert-danger" role="alert" style="display: none;" id="realert"></div>
+    </div>
+    <form class="form-signin" role="form" id="myregist" method="post">
+        <h2 class="form-signin-heading">Please sign up</h2>
+        <input type="text" class="form-control" placeholder="用户名" name="reusername" id="reusername" autocomplete="off" />
+        <input type="password" class="form-control" placeholder="密码" name="repassword" id="repassword" />
+        <input type="password" class="form-control" placeholder="确认密码" name="ageinrepassword" id="ageinrepassword" />
+        <input type="text" class="form-control" placeholder="手机号" name="rephone" id="rephone" autocomplete="off" />
+        <input type="text" class="form-control" placeholder="电子邮箱" name="reemail" id="reemail" autocomplete="off" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="resignup">Sign up</button>
+        <hr>
+        <p style="float: right"><a href="/login">Sign in</a> </p>
+    </form>
+</div>
+<script>
+    var aler = $('#realert');
+    var alerl = $('#alert');
+
+    $('#resignup').click(function () {
+        var name = $('#reusername').val();
+        var password = $('#repassword').val();
+        var rephone = $('#rephone').val();
+        var reemail = $('#reusername').val();
+        var data = {username:name,passwrod:password,phone:rephone,email:reemail};
+        if(name==''||password==''||rephone==''||reemail==''){
+            aler.show().text('对不起,填写信息不能为空');
+            return false;
+        }else{
+
+        }
+
+    });
+
+   /* $('#reusername').blur(function () {
+        var data = $('#reusername').val();
+        regist(data);
+    })*/
+
+    $('#reusername,#repassword,#rephone,#reemail,#ageinrepassword').focus(function () {
+        aler.hide();
+        alerl.hide();
+    });
+
+    function regist(data) {
+        $.ajax({
+            url:'/register',
+            type:'post',
+            data:{
+                username:$('#reusername').val()
+            },
+            success:function (data,status) {
+                alert(data);
+                alert(status);
+                if (status == 'success'){
+                    location.href = 'regist';
+                }else{
+
+                }
+            },
+           /* error:function (data,status) {
+                if (status == 'error'){
+                    alert('用户名存在,不可注册')
+                }
+            }*/
+        })
+    }
+</script>
+
+<%include footer.html%>

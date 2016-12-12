@@ -1,0 +1,39 @@
+<%include header.html%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <% if (blog.length) { %>
+            <% blog.forEach(function(blo){ %>
+            <div class="col-md-3" style="padding: 0px;margin: 10px;">
+
+                <div class="cover-info">
+                    <a class="l0" href="blogfind/<%=blo._id%>" target="_blank">
+                        <h4><%=blo.blog_title%></h4>
+                    </a>
+                    <small><%=blo.blog_abstract%></small>
+                </div>
+                <div class="cover-fields">
+                    <i class="fa fa-list-ul"></i>&nbsp;<%=blo.blog_keyword%>
+                </div>
+                <div class="cover-stat">
+                    <i class="fa fa-eye"></i><span class="f10">&nbsp;<%=blo.blog_pv%></span>
+                    <i class="fa fa-heart"></i><span class="f10"> &nbsp;<%=blo.blog_follow%></span>
+                    <div class="cover-yh ">
+                        <a href="blogfind/<%=blo._id%>"  target="_blank" ><%=blo.blog_username%> </a>
+                        <!--<a href="mem395613" data-container="body" data-toggle="popover" data-placement="top" data-content="lifanlingjue "  title="">-->
+                    </div>
+                  <!--  <i class="fa fa-user"><span class="f10" id="usernames">&nbsp;tolyzty</span></i>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">cc</button>-->
+                </div>
+            </div>
+            <% }) %>
+            <% } %>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>
+<script>
+
+</script>
+<%include footer.html%>

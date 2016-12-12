@@ -1,0 +1,289 @@
+/*@font-face {     //引入字体文件
+    font-family: "FontAwesome";
+    src:url('../bootstrap/fonts/fontawesome-webfont.eot');
+    src:url('../bootstrap/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../bootstrap/fonts/fontawesome-webfont.woff') format('woff'),
+    url('../bootstrap/fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('../bootstrap/fonts/fontawesome-webfont.svg#flexslider-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+{
+    background: #fff none repeat scroll 0 0;
+    color: #7f7f7f;
+    font-family: "FontAwesome";
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.7;
+    position: relative;
+}*/
+.form-signin {
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
+}
+.form-signin input{
+
+    margin: 20px auto;
+}
+
+.alert-signin{
+    margin: 20px auto;
+    max-width: 330px;
+    padding: 15px;
+    height: 20px;
+    line-height: 20px;
+}
+.navrigtli{
+    margin-right: 40px;
+    margin-top:10px;
+}
+
+.loginconlr{
+    border: 1px solid #39414a;
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    color: #39414a;
+    white-space: nowrap;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background: #4a4849 none repeat scroll 0 0;
+    border-color: #666;
+    color: #fff;
+}
+.logining{
+    background: #4a4849 none repeat scroll 0 0;
+    border-color: #666;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #4a4849;
+    color: #555;
+}
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.navbar-nav > li > .dropdown-menu{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.dropdown-menu > li > a{
+    color:#fff;
+}
+.dropdown-menu >li{
+    text-align: center;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #c52d2f;
+    color: #fff;
+    text-decoration: none;
+}
+a{
+    transition: color 300ms ease 0s, background-color 300ms ease 0s;
+}
+.profile .tabs-left {
+    padding: 10px 0 0;
+}
+.tabs-left {
+    background: #FFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    padding: 0;
+    margin-right: 23px;
+    font-size: 14px;
+}
+.profile li.profile-avatar {
+    text-align: center;
+    padding: 0 0 16px 0;
+    margin: 0;
+}
+.profile li.profile-avatar .avatar-with-edit .avatar {
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+}
+.profile li.profile-avatar .avatar-with-edit {
+    position: relative;
+    display: inline-block;
+}
+
+.profile li.profile-avatar .avatar-with-edit .avatar-edit-bg {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 33px;
+    overflow: hidden;
+}
+.gd-hide {
+    display: none;
+}
+.profile li.profile-avatar .avatar-with-edit a {
+    color: #FFF;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    padding: 0;
+    width: 100px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+}
+
+.profile li.profile-avatar .avatar-with-edit .avatar-edit-bg::after {
+    background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+    border-radius: 50px;
+    bottom: 0;
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    width: 100px;
+}
+.avatar-with-edit:hover a {
+    display: inline-block;
+}
+.err {
+    background-color: #ffe7e7;
+}
+.cjbg {
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+.cover-info {
+    height: 80px;
+    overflow: hidden;
+    padding: 6px 15px 28px;
+}
+.cover-fields {
+    bottom: 34px;
+    font-size: 12px;
+    height: 35px;
+    left: 10px;
+    line-height: 35px;
+    max-width: 210px;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cover-stat {
+    background-color: #f6f6f6;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid #e7e7e7;
+    box-shadow: 0 1px 0 0 #fff inset;
+    color: #8b8b8c;
+    padding: 7px 15px;
+    position: relative;
+}
+.cover-info a {
+    color: #60bde8;
+}
+.col-md-3 a {
+    display: block;
+}
+.cover-info small {
+    color: #838383;
+    padding-bottom: 10px;
+}
+.f10 {
+    padding-right: 12px;
+}
+/*.col-md-3 {
+    width: 30.6667%;
+}
+.col-md-3 {
+    float: left;
+    position: relative;
+}*/
+.col-md-3 {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s ease 0s;
+
+
+}
+.col-md-3 {
+    width: 30.6667%;
+}
+.col-md-3:hover {
+    background-color: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow:0 0 10px  rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:0 0 10px  rgba(0, 0, 0, 0.7);
+ /*   box-shadow:0 0 10px #0CC;*/
+}
+.margin{
+    padding:0px;
+}
+.myleft {
+    background-color: #fafafa;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.cover-yh {
+    border-left: 1px solid #ddd;
+    color: #aaa;
+    cursor: default;
+    font-size: 14px;
+    height: 35px;
+    line-height: 34px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 1px;
+    transition: color 0.15s linear 0s;
+    width: 99px;
+}
+.cover-yh a {
+    color: #8b8b8c;
+}
+.col-md-3 a {
+    display: block;
+}
+.cover-yh a:hover {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+.zuo {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+}
+.f {
+    float: left;
+}
+.btn-z {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+    width: 100%;
+}
+
+.top20{
+    margin-top:20px;
+}
+.glyphicon{
+    top:2px;
+}

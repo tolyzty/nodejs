@@ -1,0 +1,41 @@
+<%include header.html%>
+<div class="container">
+    <h1>欢迎您：<%-user.username%></h1>
+    <div class="profile">
+        <div class="row">
+            <div class="col-md-4 margin myleft">
+                <%include homeleft.html%>
+            </div>
+            <div class="col-md-8 margin">
+                <% if (blog.length) { %>
+                    <% blog.forEach(function(blo){ %>
+                     <div class="col-md-3" style="padding: 0px;margin: 10px;">
+
+                    <div class="cover-info">
+                        <a class="l0" href="blogfind/<%=blo._id%>" target="_blank">
+                            <h4><%=blo.blog_title%></h4>
+                        </a>
+                        <small><%=blo.blog_abstract%></small>
+                    </div>
+                    <div class="cover-fields">
+                        <i class="fa fa-list-ul"></i>&nbsp;<%=blo.blog_keyword%>
+                    </div>
+                    <div class="cover-stat">
+                        <i class="fa fa-eye"></i><span class="f10">&nbsp;<%=blo.blog_follow%></span>
+                        <i class="fa fa-heart"></i><span class="f10"> &nbsp;<%=blo.blog_pv%></span>
+                    </div>
+                </div>
+                    <% }) %>
+                <% } %>
+
+                </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<%include footer.html%>

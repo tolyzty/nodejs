@@ -1,0 +1,79 @@
+<%include header.html%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 cjbg">
+            <div style="padding-top: 20px;">
+                <div class="alert alert-warning" role="alert">发布博客信息内容真实有效</div>
+            </div>
+            <form  role="form" id="myblogform" method="post">
+                <div class="form-group "> <!--//has-error has-feedback-->
+                    <label class="control-label" for="blog_title">文章标题</label>
+                    <input type="text" class="form-control" id="blog_title" placeholder="文章标题" name="blog_title" />
+
+                    <!--   <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>-->
+                </div>
+                <div class="form-group">
+                    <label for="blog_abstract"class="control-label">文章摘要</label>
+                    <input type="text" class="form-control" id="blog_abstract" placeholder="文章摘要" name="blog_abstract" />
+
+                </div>
+                <div class="form-group">
+                    <label for="blog_keyword" class="control-label">文章关键词：每个词中间请用,号隔开，例如：JAVA,Springmvc</label>
+                    <input type="text" class="form-control" id="blog_keyword" placeholder="文章关键词" name="blog_keyword" />
+
+                </div>
+                <textarea id="blog_content" name="blog_content" ></textarea>
+
+                <div class="form-group" style="float: right">
+                    <button class="btn btn-primary" type="submit" id="submi">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#blog_content').summernote({
+            lang: 'zh-CN',
+            height:300,
+            minHeight:null,
+            maxHeight:null,
+            focus:true
+        });
+    });
+
+    var myform =  $('#myblogform');
+    var blogtitle = $('#blog_title');
+    var blogabstract = $('#blog_abstract');
+    var blogkeyword = $('#blog_keyword');
+    var blogcontent = $('#blog_content');
+    var error = 'has-error has-feedback';
+    var success = 'has-success has-feedback';
+    $('#submi').click(function () {
+        if(blogtitle.val()=='' && blogabstract.val()=='' && blogkeyword.val()==''&&blogcontent.val()==''){
+            return false;
+        }else{
+          /*  $.ajax({
+               url:'/blogadd',
+               type:'post',
+               data:doc,
+                success:function (data,status) {
+                    if (status == 'success') {
+                        alert("成功");
+                    }
+                }
+            });*/
+        }
+    });
+
+
+
+
+</script>
+<%include footer.html%>
