@@ -33,7 +33,6 @@ router.post('/',function (req,res) {
         if(doc){
             Lable.create({lable_blogid:doc._id},function (err,doc) {
                 if(doc){
-                    req.session.error = '恭喜您发布文章成功'+'<a href="/blog/:userid">'+href+'</a>';
                     res.redirect('/');
                 }else{
                     res.send(500);
